@@ -1,7 +1,7 @@
 AIRVER := $(shell git describe --tags)
 LDFLAGS += -X "main.BuildTimestamp=$(shell date -u "+%Y-%m-%d %H:%M:%S")"
 LDFLAGS += -X "main.airVersion=$(AIRVER)"
-LDFLAGS += -X "main.goVersion=$(shell go version | sed -r 's/go version go(.*)\ .*/\1/')"
+LDFLAGS += -X "main.goVersion=$(shell go version | gsed -r 's/go version go(.*)\ .*/\1/')"
 
 GO := GO111MODULE=on go
 
